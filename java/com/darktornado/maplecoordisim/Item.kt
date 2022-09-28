@@ -4,8 +4,12 @@ import org.json.JSONObject
 import java.util.*
 
 class Item {
+
+    @kotlin.jvm.JvmField
     var name: String
-    var id: String
+    @kotlin.jvm.JvmField
+    val id: String
+    @kotlin.jvm.JvmField
     var type: String
 
     constructor(name: String, id: String, type: String) {
@@ -35,5 +39,7 @@ class Item {
             }
             return map
         }
+
+        
     }
 }
