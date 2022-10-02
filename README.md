@@ -2,4 +2,4 @@
 
 © 2022 Dark Tornado, All rights reserved.
 
-* 원래는 [여기에](https://github.com/DarkTornado/MapleTools) 부가 기능으로 들어갈 예정이였던 기능
+* 원래는 [메이플 도구](https://github.com/DarkTornado/MapleTools)에 부가 기능으로 들어갈 예정이였던 기능
