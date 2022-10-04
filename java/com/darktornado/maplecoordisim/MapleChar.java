@@ -16,7 +16,7 @@ public class MapleChar {
     public MapleChar(Context ctx) {
         image = new WebView(ctx);
         image.setLayoutParams(new LinearLayout.LayoutParams(-1, ctx.getResources().getDisplayMetrics().heightPixels / 3));
-        image.setBackgroundColor(-1);
+        image.setBackgroundColor(0);
         update();
     }
 
