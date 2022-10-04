@@ -1,9 +1,9 @@
 package com.darktornado.maplecoordisim
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -12,7 +12,7 @@ import android.widget.AdapterView.OnItemClickListener
 import org.json.JSONObject
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     private val ITEM_LIST_URL = "https://raw.githubusercontent.com/DarkTornado/MapleCoordiSim/main/maple.json"
     private var adapter: ArrayAdapter<*>? = null
