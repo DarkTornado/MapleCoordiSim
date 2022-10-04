@@ -1,15 +1,14 @@
 package com.darktornado.maplecoordisim
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
+import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
-import android.widget.ArrayAdapter
-import android.widget.LinearLayout
-import android.widget.ListView
 import org.json.JSONObject
 import java.util.*
 
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
 //            0 -> inputName()
-//            1 -> selectSkin()
+            1 -> selectSkin()
             2 -> mc!!.update()
         }
         return super.onOptionsItemSelected(item)
@@ -59,4 +58,24 @@ class MainActivity : AppCompatActivity() {
         }).start()
     }
 
+
+    fun selectSkin() {
+        val names = arrayOfNulls<String>(Skin.list.size)
+        for (n in names.indices) {
+            names[n] = Skin.list[n].name
+        }
+        val dialog = AlertDialog.Builder(this)
+        dialog.setTitle("피부 선택")
+        dialog.setItems(names) { _dialog: DialogInterface?, w: Int ->
+            mc!!.skin = Skin.list[w]
+            mc!!.update()
+            toast(names[w].toString() + "가 선택되었어요.")
+        }
+        dialog.setNegativeButton("취소", null)
+        dialog.show()
+    }
+
+    fun toast(msg: String?) {
+        runOnUiThread { Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show() }
+    }
 }
