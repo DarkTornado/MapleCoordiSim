@@ -23,7 +23,7 @@ class MainActivity : Activity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menu.add(0, 0, 0, "아이템 추가")
-        menu.add(0, 1, 0, "피부색 변경")
+        menu.add(0, 1, 0, "피부 변경")
         menu.add(0, 2, 0, "새로 고침")
         return true
     }
@@ -58,8 +58,7 @@ class MainActivity : Activity() {
             items = Item.createList(JSONObject(_list))
         }).start()
     }
-
-
+    
     fun inputName() {
         val dialog = AlertDialog.Builder(this)
         dialog.setTitle("아이템 추가")
