@@ -49,6 +49,12 @@ class MainActivity : Activity() {
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, names as List<Any?>)
         list.adapter = adapter
         list.onItemClickListener = OnItemClickListener { parent: AdapterView<*>?, view: View?, pos: Int, id: Long ->
+            val type = parts[id.toInt()]
+            val name = mc!!.items.get(type)!!.name
+            mc!!.items.remove(type)
+            mc!!.update()
+            toast("$name(이)가 삭제되었어요.")
+            update()
         }
         layout.addView(list)
 
