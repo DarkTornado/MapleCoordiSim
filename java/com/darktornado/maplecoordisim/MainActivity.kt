@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
+import com.darktornado.library.LoadingDialog
 import org.json.JSONObject
 import java.util.*
 
@@ -59,9 +60,11 @@ class MainActivity : Activity() {
         layout.addView(list)
 
         setContentView(layout)
+        val dialog = LoadingDialog.create(this, "아이템 목록 불러오는 중...")
         Thread(Runnable {
             val _list: String = Utils.getWebText(ITEM_LIST_URL)
             items = Item.createList(JSONObject(_list))
+            runOnUiThread { dialog.dismiss() }
         }).start()
     }
     
