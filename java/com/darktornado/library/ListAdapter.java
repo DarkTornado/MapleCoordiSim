@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.darktornado.nusty.R;
+import com.darktornado.maplecoordisim.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
