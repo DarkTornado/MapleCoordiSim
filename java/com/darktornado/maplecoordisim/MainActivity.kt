@@ -71,10 +71,15 @@ class MainActivity : Activity() {
     fun inputName() {
         val dialog = AlertDialog.Builder(this)
         dialog.setTitle("아이템 추가")
+        val layout = LinearLayout(this)
+        layout.orientation = 1
         val txt = EditText(this)
         txt.hint = "아이템 이름 입력..."
         txt.setSingleLine()
-        dialog.setView(txt)
+        layout.addView(txt)
+        val pad = dip2px(16)
+        layout.setPadding(pad, pad, pad, pad)
+        dialog.setView(layout)
         dialog.setNegativeButton("취소", null)
         dialog.setPositiveButton("검색") { _dialog: DialogInterface?, which: Int ->
             val input = txt.text.toString()
@@ -144,5 +149,9 @@ class MainActivity : Activity() {
 
     fun toast(msg: String?) {
         runOnUiThread { Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show() }
+    }
+
+    fun dip2px(dips: Int): Int {
+        return Math.ceil((dips * this.resources.displayMetrics.density).toDouble()).toInt()
     }
 }
