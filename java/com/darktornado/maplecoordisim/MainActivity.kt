@@ -151,7 +151,6 @@ class MainActivity : Activity() {
         runOnUiThread { Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show() }
     }
 
-    fun dip2px(dips: Int): Int {
-        return Math.ceil((dips * this.resources.displayMetrics.density).toDouble()).toInt()
-    }
+    fun dip2px(dips: Int) = Math.ceil((dips * this.resources.displayMetrics.density).toDouble()).toInt()
+    
 }
