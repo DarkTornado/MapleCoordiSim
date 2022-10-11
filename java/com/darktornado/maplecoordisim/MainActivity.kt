@@ -57,6 +57,9 @@ class MainActivity : Activity() {
         adapter!!.setItems(items)
         list.adapter = adapter!!
         list.onItemClickListener = OnItemClickListener { parent: AdapterView<*>?, view: View?, pos: Int, id: Long ->
+            val item = items[pos]
+            val type = item.subtitle
+            showItemMenu(mc!!.items[type]!!, item.icon)
         }
         layout.addView(list)
 
