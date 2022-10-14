@@ -65,9 +65,9 @@ class MainActivity : Activity() {
 
         val pad = dip2px(16)
         layout.setPadding(pad, pad, pad, pad)
-        val scroll = ScrollView(this)
-        scroll.addView(layout)
-        setContentView(scroll)
+        val layout2 = LinearLayout(this)
+        layout2.addView(layout)
+        setContentView(layout2)
         val dialog = LoadingDialog.create(this, "아이템 목록 불러오는 중...")
         Thread(Runnable {
             val _list: String = Utils.getWebText(ITEM_LIST_URL)
