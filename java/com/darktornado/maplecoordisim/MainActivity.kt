@@ -26,7 +26,7 @@ class MainActivity : Activity() {
     private val names = ArrayList<String>()
     private val parts = ArrayList<String>()
     private var itemList: HashMap<String, Item>? = null
-    private val items: ArrayList<ListItem> = ArrayList<ListItem>()
+    private val items: ArrayList<ListItem> = ArrayList<>()
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menu.add(0, 0, 0, "아이템 추가")
