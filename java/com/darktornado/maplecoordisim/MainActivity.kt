@@ -23,8 +23,6 @@ class MainActivity : Activity() {
     private val ITEM_LIST_URL = "https://raw.githubusercontent.com/DarkTornado/MapleCoordiSim/main/maple.json"
     private var adapter: ListAdapter? = null
     private var mc: MapleChar? = null
-    private val names = ArrayList<String>()
-    private val parts = ArrayList<String>()
     private var itemList: HashMap<String, Item>? = null
     private val items: ArrayList<ListItem> = ArrayList<>()
 
